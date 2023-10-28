@@ -1,17 +1,17 @@
 // main.cpp
 #include "CityDictionary.h"
 #include <iostream>
-
+using namespace std;
 void printMenu() {
-    std::cout << "===== Menu =====\n";
-    std::cout << "1. Build Initial Dictionary from CSV\n";
-    std::cout << "2. Save Dictionary to Disk\n";
-    std::cout << "3. Load Dictionary from Disk\n";
-    std::cout << "4. Update Dictionary from CSV\n";
-    std::cout << "5. Search City\n";
-    std::cout << "6. Display All Cities\n";
-    std::cout << "7. Compute Distance Between Cities\n";
-    std::cout << "8. Exit\n";
+    cout << "===== Menu =====\n";
+    cout << "1. Build Initial Dictionary from CSV\n";
+    cout << "2. Save Dictionary to Disk\n";
+    cout << "3. Load Dictionary from Disk\n";
+    cout << "4. Update Dictionary from CSV\n";
+    cout << "5. Search City\n";
+    cout << "6. Display All Cities\n";
+    cout << "7. Compute Distance Between Cities\n";
+cout << "8. Exit\n";
 }
 
 int main() {
@@ -22,8 +22,8 @@ int main() {
 
     do {
         printMenu();
-        std::cout << "Enter your choice (1-8): ";
-        std::cin >> choice;
+        cout << "Enter your choice (1-8): ";
+        cin >> choice;
 
         switch (choice) {
         case 1:
@@ -37,19 +37,19 @@ int main() {
             cityDict.saveDictionaryToDisk(csvFilePath);
             break;
         case 3:
-            std::cout << "Enter file path to load: ";
-            std::cin >> csvFilePath;
+            cout << "Enter file path to load: ";
+            cin >> csvFilePath;
             cityDict.loadDictionaryFromDisk(csvFilePath);
             break;
         case 4:
-            std::cout << "Enter CSV file path to update: ";
-            std::cin >> csvFilePath;
+            cout << "Enter CSV file path to update: ";
+            cin >> csvFilePath;
             cityDict.updateDictionary(csvFilePath);
             break;
         case 5:
-            std::cout << "Enter city name to search: ";
-            std::string cityName;
-            std::cin >> cityName;
+            cout << "Enter city name to search: ";
+            string cityName;
+            cin >> cityName;
             cityDict.searchCity(cityName);
             break;
         case 6:
@@ -59,10 +59,10 @@ int main() {
             
             break;*/
         case 8:
-            std::cout << "Exiting...\n";
+            cout << "Exiting...\n";
             break;
         default:
-            std::cout << "Invalid choice. Please enter a number between 1 and 8.\n";
+            cout << "Invalid choice. Please enter a number between 1 and 8.\n";
         }
     } while (choice != 8);
 
